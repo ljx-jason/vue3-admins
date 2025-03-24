@@ -4,7 +4,7 @@
     <div v-if="isMobile && isSidebarOpen" class="layout__overlay" @click="handleCloseSidebar" />
 
     <!-- 侧边栏 -->
-    <Sidebar class="layout__sidebar" />
+    <!-- <Sidebar class="layout__sidebar" /> -->
 
     <!-- 混合布局 -->
     <div v-if="layout === LayoutEnum.MIX" class="layout__container">
@@ -18,6 +18,26 @@
           <Hamburger :is-active="appStore.sidebar.opened" @toggle-click="handleToggleSidebar" />
         </div>
       </div>
+      <!-- 主内容区域 -->
+      <div :class="{ hasTagsView: isShowTagsView }" class="layout__main">
+        <TagsView v-if="isShowTagsView" />
+        <AppMain />
+        <Settings v-if="defaultSettings.showSettings" />
+        <!-- 返回顶部按钮 -->
+        <el-backtop target=".app-main">
+          <div class="i-svg:backtop w-6 h-6" />
+        </el-backtop>
+      </div>
+    </div>
+
+    <!-- 顶部固定+左侧布局 -->
+    <div v-else-if="layout === LayoutEnum.FIXED" class="layout-fixed">
+      <!-- 顶部导航栏 -->
+      <NavBar class="layout__navbar" />
+
+      <!-- 左侧菜单 -->
+      <Sidebar class="layout__sidebar" />
+
       <!-- 主内容区域 -->
       <div :class="{ hasTagsView: isShowTagsView }" class="layout__main">
         <TagsView v-if="isShowTagsView" />
@@ -295,12 +315,62 @@ function handleToggleSidebar() {
       }
     }
   }
+
   &.openSidebar {
     &.mobile {
       .layout__main {
         margin-left: 0;
       }
     }
+  }
+}
+
+.layout-fixed {
+  .layout__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  &.hideSidebar {
+    .layout__sidebar {
+      width: $sidebar-width-collapsed;
+    }
+
+    .layout__main {
+      margin-left: $sidebar-width-collapsed;
+    }
+
+    &.mobile {
+      .layout__sidebar {
+        pointer-events: none;
+        transform: translate3d(-$sidebar-width, 0, 0);
+        transition-duration: 0.3s;
+      }
+
+      .layout__main {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.openSidebar {
+    &.mobile {
+      .layout__main {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .layout__sidebar {
+    top: $navbar-height; // 顶部导航栏高度
+  }
+
+  .layout__main {
+    padding-top: $navbar-height;
   }
 }
 </style>

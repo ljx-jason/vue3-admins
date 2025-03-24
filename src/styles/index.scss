@@ -1,7 +1,7 @@
 @use "./reset";
 
 .app-container {
-  padding: 15px;
+  padding: 10px;
 }
 
 .search-bar {
@@ -25,4 +25,189 @@
   &:hover {
     color: rgb(32 160 255);
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  margin-top: 10px;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 1px;
+  height: 15px;
+  // background-color: #ebeef5;
+  // background-color: #eee;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  // background-color: #ccc;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  // background: rgba(255, 255, 255, 1);
+}
+
+.info-increase {
+  background: #f8f8f8;
+  //box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  // height: 113px;
+  padding: 20px 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  align-items: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    // transform: scale(1.05);
+    /* 放大效果 */
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    /* 渐进的阴影 */
+  }
+
+  .flex-box {
+    display: flex;
+
+    .basic-info {
+      margin-left: 5px;
+
+      &-title {
+        font-size: 14px;
+        color: #666666;
+      }
+
+      &-value {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333333;
+        margin-top: 10px;
+
+        .company {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &-img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .des-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333333;
+  }
+
+  .progress {
+    margin: 15px 0;
+  }
+
+  .des-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 定义4列，每列平均分配剩余空间 */
+    grid-gap: 20px;
+    /* 设置列之间的间隙为20px */
+    font-size: 14px;
+    margin-left: 20px;
+
+    .des {
+      font-size: 14px;
+
+      .des-title {
+        font-weight: 400;
+        font-size: 14px;
+        color: #666666;
+
+        &::before {
+          content: "●";
+          margin-right: 5px;
+
+          font-size: 14px;
+          color: #cccccc;
+        }
+      }
+
+      .num {
+        font-size: 14px;
+        // font-weight: bold;
+
+        // color: #23c876;
+        color: #e83e3e;
+
+        &::before {
+          content: "+";
+          margin-right: -3px;
+        }
+      }
+
+      .resStyle {
+        // color: #e83e3e;
+        color: #23c876;
+
+        &::before {
+          content: "";
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.view-container {
+  text-align: left;
+
+  .part-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #303133;
+  }
+}
+
+.top-title {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+  color: rgb(51, 51, 51);
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 20px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0.1875rem;
+    height: 1rem;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: #333333;
+    border-radius: 0.125rem;
+  }
+}
+
+.increase-wrap {
+  display: flex;
+  grid-gap: 20px;
 }

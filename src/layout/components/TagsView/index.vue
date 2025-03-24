@@ -10,7 +10,7 @@
         @click.middle="!isAffix(tag) ? closeSelectedTag(tag) : ''"
         @contextmenu.prevent="openContentMenu(tag, $event)"
       >
-        {{ translateRouteTitle(tag.title) }}
+        {{ tag.title }}
         <el-icon
           v-if="!isAffix(tag)"
           class="tag-close-icon"
@@ -58,7 +58,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter, RouteRecordRaw } from "vue-router";
 import { resolve } from "path-browserify";
-import { translateRouteTitle } from "@/utils/i18n";
 
 import { usePermissionStore, useTagsViewStore, useSettingsStore, useAppStore } from "@/store";
 
@@ -188,7 +187,7 @@ function isAffix(tag: TagView) {
 
 function isFirstView() {
   return (
-    selectedTag.value.path === "/dashboard" ||
+    selectedTag.value.path === "/overview" ||
     selectedTag.value.fullPath === tagsViewStore.visitedViews[1]?.fullPath
   );
 }
@@ -253,7 +252,7 @@ function openContentMenu(tag: TagView, e: MouseEvent) {
   const offsetLeft = proxy?.$el.getBoundingClientRect().left; // container margin left
   const offsetWidth = proxy?.$el.offsetWidth; // container width
   const maxLeft = offsetWidth - menuMinWidth; // left boundary
-  const l = e.clientX - offsetLeft + 15; // 15: margin right
+  const l = e.clientX - offsetLeft + 10; // 15: margin right
 
   if (l > maxLeft) {
     left.value = maxLeft;
@@ -359,11 +358,11 @@ onMounted(() => {
     }
 
     &:first-of-type {
-      margin-left: 15px;
+      margin-left: 10px;
     }
 
     &:last-of-type {
-      margin-right: 15px;
+      margin-right: 10px;
     }
 
     .tag-close-icon {

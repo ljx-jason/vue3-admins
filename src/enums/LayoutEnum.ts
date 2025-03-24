@@ -15,4 +15,9 @@ export const enum LayoutEnum {
    * 混合菜单布局
    */
   MIX = "mix",
+
+  /**
+   * 顶部固定左侧菜单布局
+   */
+  FIXED = "fixed",
 }

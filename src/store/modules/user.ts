@@ -5,7 +5,7 @@ import { useDictStoreHook } from "@/store/modules/dict";
 import AuthAPI, { type LoginFormData } from "@/api/auth";
 import UserAPI, { type UserInfo } from "@/api/system/user";
 
-import { setAccessToken, setRefreshToken, getRefreshToken, clearToken } from "@/utils/auth";
+import { setAccessToken, clearToken } from "@/utils/auth";
 
 export const useUserStore = defineStore("user", () => {
   const userInfo = useStorage<UserInfo>("userInfo", {} as UserInfo);
@@ -20,9 +20,8 @@ export const useUserStore = defineStore("user", () => {
     return new Promise<void>((resolve, reject) => {
       AuthAPI.login(LoginFormData)
         .then((data) => {
-          const { accessToken, refreshToken } = data;
+          const { accessToken } = data;
           setAccessToken(accessToken); // eyJhbGciOiJIUzI1NiJ9.xxx.xxx
-          setRefreshToken(refreshToken);
           resolve();
         })
         .catch((error) => {
@@ -41,7 +40,7 @@ export const useUserStore = defineStore("user", () => {
       UserAPI.getInfo()
         .then((data) => {
           if (!data) {
-            reject("Verification failed, please Login again.");
+            reject("验证失败，请重新登录~");
             return;
           }
           Object.assign(userInfo.value, { ...data });
@@ -70,26 +69,6 @@ export const useUserStore = defineStore("user", () => {
   }
 
   /**
-   * 刷新 token
-   */
-  function refreshToken() {
-    const refreshToken = getRefreshToken();
-    return new Promise<void>((resolve, reject) => {
-      AuthAPI.refreshToken(refreshToken)
-        .then((data) => {
-          const { accessToken, refreshToken } = data;
-          setAccessToken(accessToken);
-          setRefreshToken(refreshToken);
-          resolve();
-        })
-        .catch((error) => {
-          console.log(" refreshToken  刷新失败", error);
-          reject(error);
-        });
-    });
-  }
-
-  /**
    * 清理用户数据
    *
    * @returns
@@ -109,7 +88,6 @@ export const useUserStore = defineStore("user", () => {
     login,
     logout,
     clearUserData,
-    refreshToken,
   };
 });
 

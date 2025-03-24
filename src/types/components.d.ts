@@ -67,8 +67,6 @@ declare module "vue" {
     GithubCorner: (typeof import("./../components/GithubCorner/index.vue"))["default"];
     Hamburger: (typeof import("./../components/Hamburger/index.vue"))["default"];
     IconSelect: (typeof import("./../components/IconSelect/index.vue"))["default"];
-    LangSelect: (typeof import("./../components/LangSelect/index.vue"))["default"];
-    MenuSearch: (typeof import("./../components/MenuSearch/index.vue"))["default"];
     MultiImageUpload: (typeof import("./../components/Upload/MultiImageUpload.vue"))["default"];
     NoticeDropdown: (typeof import("./../components/Notice/NoticeDropdown.vue"))["default"];
     LayoutSelect: (typeof import("./../layout/components/Settings/components/LayoutSelect.vue"))["default"];
@@ -87,7 +85,6 @@ declare module "vue" {
     SidebarMenuItemTitle: (typeof import("./../layout/components/Sidebar/components/SidebarMenuItemTitle.vue"))["default"];
     SidebarMixTopMenu: (typeof import("./../layout/components/Sidebar/components/SidebarMixTopMenu.vue"))["default"];
     SingleImageUpload: (typeof import("./../components/Upload/SingleImageUpload.vue"))["default"];
-    SizeSelect: (typeof import("./../components/SizeSelect/index.vue"))["default"];
     TableSelect: (typeof import("./../components/TableSelect/index.vue"))["default"];
     TagsView: (typeof import("./../layout/components/TagsView/index.vue"))["default"];
     ThemeColorPicker: (typeof import("./../layout/components/Settings/components/ThemeColorPicker.vue"))["default"];

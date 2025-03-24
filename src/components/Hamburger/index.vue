@@ -1,13 +1,12 @@
 <template>
   <div class="hamburger-wrapper" @click="toggleClick">
-    <div :class="['i-svg:collapse', { hamburger: true, 'is-active': isActive }, hamburgerClass]" />
+    <div :class="['i-svg:collapse', { hamburger: true, 'is-active': isActive }, 'hamburger--white']" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useSettingsStore } from "@/store";
-import { ThemeEnum, SidebarColorEnum } from "@/enums/ThemeEnum";
-import { LayoutEnum } from "@/enums/LayoutEnum";
+// import { LayoutEnum } from "@/enums/LayoutEnum";
 
 defineProps({
   isActive: { type: Boolean, required: true },
@@ -16,22 +15,7 @@ defineProps({
 const emit = defineEmits(["toggleClick"]);
 
 const settingsStore = useSettingsStore();
-const layout = computed(() => settingsStore.layout);
-
-const hamburgerClass = computed(() => {
-  // 如果暗黑主题
-  if (settingsStore.theme === ThemeEnum.DARK) {
-    return "hamburger--white";
-  }
-
-  // 如果是混合布局 && 侧边栏配色方案是经典蓝
-  if (
-    layout.value === LayoutEnum.MIX &&
-    settingsStore.sidebarColorScheme === SidebarColorEnum.CLASSIC_BLUE
-  ) {
-    return "hamburger--white";
-  }
-});
+// const layout = computed(() => settingsStore.layout);
 
 function toggleClick() {
   emit("toggleClick");

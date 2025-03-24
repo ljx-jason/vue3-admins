@@ -9,7 +9,7 @@
 
     <!-- 顶部布局 || 左侧布局 -->
     <template v-else>
-      <SidebarLogo v-if="sidebarLogo" :collapse="isSidebarCollapsed" />
+      <!-- <SidebarLogo v-if="sidebarLogo" :collapse="isSidebarCollapsed" /> -->
       <el-scrollbar>
         <SidebarMenu :data="permissionStore.routes" base-path="" />
       </el-scrollbar>

@@ -9,19 +9,13 @@ import mockDevServerPlugin from "vite-plugin-mock-dev-server";
 
 import UnoCSS from "unocss/vite";
 import { resolve } from "path";
-import { name, version, engines, dependencies, devDependencies } from "./package.json";
-
-// 平台的名称、版本、运行所需的 node 版本、依赖、构建时间的类型提示
-const __APP_INFO__ = {
-  pkg: { name, version, engines, dependencies, devDependencies },
-  buildTimestamp: Date.now(),
-};
 
 const pathSrc = resolve(__dirname, "src");
 
 // Vite配置  https://cn.vitejs.dev/config
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd());
+  console.log("当前环境：", env);
   return {
     resolve: {
       alias: {
@@ -47,7 +41,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         // 代理 /dev-api 的请求
         [env.VITE_APP_BASE_API]: {
           changeOrigin: true,
-          // 代理目标地址：https://api.youlai.tech
           target: env.VITE_APP_API_URL,
           rewrite: (path) => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), ""),
         },
@@ -60,7 +53,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       // 自动导入配置 https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts
       AutoImport({
         // 导入 Vue 函数，如：ref, reactive, toRef 等
-        imports: ["vue", "@vueuse/core", "pinia", "vue-router", "vue-i18n"],
+        imports: ["vue", "@vueuse/core", "pinia", "vue-router"],
         resolvers: [
           // 导入 Element Plus函数，如：ElMessage, ElMessageBox 等
           ElementPlusResolver(),
@@ -99,17 +92,16 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         "sortablejs",
         "exceljs",
         "path-to-regexp",
-        "echarts/core",
-        "echarts/renderers",
-        "echarts/charts",
-        "echarts/components",
-        "vue-i18n",
+        // "echarts/core",
+        // "echarts/renderers",
+        // "echarts/charts",
+        // "echarts/components",
         "nprogress",
         "qs",
         "path-browserify",
         "@element-plus/icons-vue",
         "element-plus/es/locale/lang/zh-cn",
-        "element-plus/es/locale/lang/en",
+        // "element-plus/es/locale/lang/en",
         "element-plus/es/components/form/style/css",
         "element-plus/es/components/form-item/style/css",
         "element-plus/es/components/button/style/css",
@@ -157,11 +149,11 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         "element-plus/es/components/notification/style/css",
         "element-plus/es/components/image/style/css",
         "element-plus/es/components/statistic/style/css",
-        "element-plus/es/components/watermark/style/css",
+        // "element-plus/es/components/watermark/style/css",
         "element-plus/es/components/config-provider/style/css",
         "element-plus/es/components/text/style/css",
         "element-plus/es/components/drawer/style/css",
-        "element-plus/es/components/color-picker/style/css",
+        // "element-plus/es/components/color-picker/style/css",
         "element-plus/es/components/backtop/style/css",
         "element-plus/es/components/message-box/style/css",
         "element-plus/es/components/skeleton/style/css",
@@ -170,7 +162,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         "element-plus/es/components/badge/style/css",
         "element-plus/es/components/steps/style/css",
         "element-plus/es/components/step/style/css",
-        "element-plus/es/components/avatar/style/css",
+        // "element-plus/es/components/avatar/style/css",
         "element-plus/es/components/descriptions/style/css",
         "element-plus/es/components/descriptions-item/style/css",
         "element-plus/es/components/checkbox-group/style/css",
@@ -198,9 +190,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       },
       rollupOptions: {
         output: {
-          // manualChunks: {
-          //   "vue-i18n": ["vue-i18n"],
-          // },
           // 用于从入口点创建的块的打包输出格式[name]表示文件名,[hash]表示该文件内容hash值
           entryFileNames: "js/[name].[hash].js",
           // 用于命名代码拆分时创建的共享块的输出命名
@@ -221,9 +210,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           },
         },
       },
-    },
-    define: {
-      __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
   };
 });

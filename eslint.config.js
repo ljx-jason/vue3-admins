@@ -37,7 +37,6 @@ export default [
           ExcelResult: "readonly",
           TagView: "readonly",
           AppSettings: "readonly",
-          __APP_INFO__: "readonly",
         },
       },
     },

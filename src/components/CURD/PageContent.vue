@@ -316,7 +316,7 @@
     <!-- 分页 -->
     <template v-if="showPagination">
       <el-scrollbar>
-        <div class="mt-[12px]">
+        <div class="mt-[12px] page">
           <el-pagination
             v-bind="pagination"
             @size-change="handleSizeChange"
@@ -972,4 +972,11 @@ function saveXlsx(fileData: any, fileName: string) {
 defineExpose({ fetchPageData, exportPageData, getFilterParams });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.page {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  margin-top: 10px;
+}
+</style>

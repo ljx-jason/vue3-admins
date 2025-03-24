@@ -45,6 +45,12 @@ export default defineMock([
           "sys:role:delete",
           "sys:menu:edit",
           "sys:config:query",
+          "rating-claiming:query", // 评分认领
+          "rating-claiming:add",
+          "rating-claiming:edit",
+          "rating-claiming:delete",
+          // "rating-claiming:import",
+          // "rating-claiming:export",
         ],
       },
       msg: "一切ok",

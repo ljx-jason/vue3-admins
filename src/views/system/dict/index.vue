@@ -27,6 +27,7 @@
       </div>
 
       <el-table
+        v-autoHeight="90"
         v-loading="loading"
         highlight-current-row
         :data="tableData"

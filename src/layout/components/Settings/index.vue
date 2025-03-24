@@ -1,15 +1,11 @@
 <template>
   <el-drawer v-model="settingsVisible" size="300" :title="$t('settings.project')">
-    <el-divider>{{ $t("settings.theme") }}</el-divider>
+    <el-divider>主题</el-divider>
 
-    <div class="flex-center">
-      <el-switch v-model="isDark" active-icon="Moon" inactive-icon="Sunny" @change="changeTheme" />
-    </div>
-
-    <el-divider>{{ $t("settings.interface") }}</el-divider>
+    <el-divider>接口</el-divider>
 
     <div class="py-1 flex-x-between">
-      <span class="text-xs">{{ $t("settings.themeColor") }}</span>
+      <span class="text-xs">主题颜色</span>
       <ThemeColorPicker v-model="settingsStore.themeColor" @update:model-value="changeThemeColor" />
     </div>
 
@@ -27,7 +23,7 @@
       <span class="text-xs">{{ $t("settings.watermark") }}</span>
       <el-switch v-model="settingsStore.watermarkEnabled" />
     </div>
-    <div v-if="!isDark" class="py-1 flex-x-between">
+    <div class="py-1 flex-x-between">
       <span class="text-xs">{{ $t("settings.sidebarColorScheme") }}</span>
       <el-radio-group v-model="sidebarColor" @change="changeSidebarColor">
         <el-radio :value="SidebarColorEnum.CLASSIC_BLUE">{{ $t("settings.classicBlue") }}</el-radio>
@@ -45,8 +41,6 @@
 
 <script setup lang="ts">
 import { LayoutEnum } from "@/enums/LayoutEnum";
-import { ThemeEnum } from "@/enums/ThemeEnum";
-import { SidebarColorEnum } from "@/enums/ThemeEnum";
 import { useSettingsStore, usePermissionStore, useAppStore } from "@/store";
 
 const route = useRoute();
@@ -54,7 +48,6 @@ const appStore = useAppStore();
 const settingsStore = useSettingsStore();
 const permissionStore = usePermissionStore();
 
-const isDark = ref<boolean>(settingsStore.theme === ThemeEnum.DARK);
 const sidebarColor = ref(settingsStore.sidebarColorScheme);
 
 const settingsVisible = computed({
@@ -67,25 +60,6 @@ const settingsVisible = computed({
 });
 
 /**
- *  切换主题颜色
- *
- * @param color 颜色
- */
-function changeThemeColor(color: string) {
-  settingsStore.changeThemeColor(color);
-}
-
-/**
- * 切换主题
- *
- * @param val 是否为暗黑模式
- */
-const changeTheme = (val: any) => {
-  isDark.value = val;
-  settingsStore.changeTheme(isDark.value ? ThemeEnum.DARK : ThemeEnum.LIGHT);
-};
-
-/**
  * 更改侧边栏颜色
  *
  * @param val 颜色方案名称
@@ -93,6 +67,14 @@ const changeTheme = (val: any) => {
 const changeSidebarColor = (val: any) => {
   settingsStore.changeSidebarColor(val);
 };
+/**
+ *  切换主题颜色
+ *
+ * @param color 颜色
+ */
+function changeThemeColor(color: string) {
+  settingsStore.changeThemeColor(color);
+}
 
 /**
  * 切换布局

@@ -1,10 +1,12 @@
 <template>
   <div class="navbar">
     <div class="navbar__left">
+      <!-- logo -->
+      <Logo />
       <!-- 展开/收缩菜单  -->
       <Hamburger :is-active="isSidebarOpened" @toggle-click="toggleSideBar" />
       <!-- 面包屑 -->
-      <Breadcrumb />
+      <!-- <Breadcrumb /> -->
     </div>
     <!-- 导航栏右侧 -->
     <NavbarRight />
@@ -30,7 +32,8 @@ function toggleSideBar() {
   display: flex;
   justify-content: space-between;
   height: $navbar-height;
-  background: var(--el-bg-color);
+  // background: var(--el-bg-color);
+  background: $navbar-background;
 
   &__left {
     display: flex;

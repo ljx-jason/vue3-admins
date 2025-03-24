@@ -81,12 +81,4 @@ function handleCurrentChange(val: number) {
 }
 </script>
 
-<style lang="scss" scoped>
-.pagination {
-  padding: 12px;
-
-  &.hidden {
-    display: none;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

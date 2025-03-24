@@ -3,7 +3,7 @@
   <div class="app-container">
     <el-row :gutter="20">
       <!-- 部门树 -->
-      <el-col :lg="4" :xs="24" class="mb-[12px]">
+      <el-col :lg="4" :xs="24">
         <DeptTree v-model="queryParams.deptId" @node-click="handleQuery" />
       </el-col>
 
@@ -89,7 +89,12 @@
             </div>
           </div>
 
-          <el-table v-loading="loading" :data="pageData" @selection-change="handleSelectionChange">
+          <el-table
+            v-autoHeight="90"
+            v-loading="loading"
+            :data="pageData"
+            @selection-change="handleSelectionChange"
+          >
             <el-table-column type="selection" width="50" align="center" />
             <el-table-column label="用户名" prop="username" />
             <el-table-column label="昵称" width="150" align="center" prop="nickname" />

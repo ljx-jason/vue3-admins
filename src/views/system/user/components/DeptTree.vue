@@ -1,9 +1,11 @@
 <!-- 部门树 -->
 <template>
-  <el-card shadow="never">
+  <el-card shadow="never" class="tree-card">
     <el-input v-model="deptName" placeholder="部门名称" clearable>
       <template #prefix>
-        <el-icon><Search /></el-icon>
+        <el-icon>
+          <Search />
+        </el-icon>
       </template>
     </el-input>
 
@@ -68,3 +70,8 @@ onBeforeMount(() => {
   });
 });
 </script>
+<style lang="scss" scoped>
+.tree-card {
+  height: 100%;
+}
+</style>

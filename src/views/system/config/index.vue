@@ -40,6 +40,7 @@
 
       <el-table
         ref="dataTableRef"
+        v-autoHeight="90"
         v-loading="loading"
         :data="pageData"
         highlight-current-row

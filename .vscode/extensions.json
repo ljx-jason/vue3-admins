@@ -2,7 +2,6 @@
   "recommendations": [
     "vue.volar",
     "antfu.unocss",
-    "lokalise.i18n-ally",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",

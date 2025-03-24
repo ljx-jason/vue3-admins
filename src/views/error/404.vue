@@ -5,15 +5,10 @@
     </div>
     <div class="bullshit">
       <div class="bullshit__oops">OOPS！</div>
-      <div class="bullshit__info">
-        该页面无法访问。
-        <a style="color: #20a0ff" href="https://www.youlai.tech.com" target="_blank">
-          有来开源官网
-        </a>
-      </div>
+      <div class="bullshit__info">该页面无法访问。</div>
       <div class="bullshit__headline">抱歉，您访问的页面不存在。</div>
       <div class="bullshit__info">请确认您输入的网址是否正确，或者点击下方按钮返回首页。</div>
-      <a href="#" class="bullshit__return-home" @click.prevent="back">返回首页</a>
+      <router-link to="/" class="bullshit__return-home">返回首页</router-link>
     </div>
   </div>
 </template>
@@ -27,18 +22,18 @@ defineOptions({
 
 const router = useRouter();
 
-function back() {
-  router.back();
-}
+// function back() {
+//   router.back();
+// }
 </script>
 
 <style lang="scss" scoped>
 .page-container {
   display: flex;
-  padding: 100px;
+  // padding: 100px;
 
   .pic-404 {
-    width: 600px;
+    width: 500px;
     overflow: hidden;
 
     &__parent {

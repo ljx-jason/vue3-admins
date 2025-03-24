@@ -29,6 +29,7 @@
       <el-table
         ref="dataTableRef"
         v-loading="loading"
+        v-autoHeight="90"
         :data="roleList"
         highlight-current-row
         border

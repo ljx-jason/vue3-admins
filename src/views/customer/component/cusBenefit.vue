@@ -115,13 +115,13 @@ const reqCusValueInfo = () => {
     justify-content: space-between;
 
     .part-left {
-      width: 60%;
       display: flex;
       flex-direction: column;
+      width: 60%;
 
       .left-wrap {
-        flex: 1;
         display: flex;
+        flex: 1;
         grid-gap: 10px;
         align-items: center;
 
@@ -148,19 +148,19 @@ const reqCusValueInfo = () => {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
-        background-color: #f0f4fa;
         padding: 20px;
+        background-color: #f0f4fa;
 
         >div {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
           height: 100px;
-          color: #000;
-          border-radius: 8px;
-          text-align: left;
           padding: 20px;
+          color: #000;
+          text-align: left;
           background-color: #fff;
+          border-radius: 8px;
 
           .des-title {
             // margin-top: 20px;

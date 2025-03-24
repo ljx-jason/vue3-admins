@@ -447,9 +447,9 @@ const handleClick = (row: any, type: string) => {
   grid-template-columns: repeat(7, 1fr) !important;
   /* 定义4列，每列平均分配剩余空间 */
   grid-gap: 10px !important;
+  padding: 15px !important;
   background-color: #fff !important;
   border-radius: 6px !important;
-  padding: 15px !important;
 
   .num {
     margin-left: 2px;

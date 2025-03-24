@@ -489,7 +489,7 @@ const handleZdy = (val: any) => {
         </el-form>
       </div>
       <el-row justify="center">
-        <el-col :span="12" style="text-align: center; margin-top: 20px">
+        <el-col :span="12" style=" margin-top: 20px;text-align: center">
           <el-button v-if="route.query.subType === 'kyc'" type="primary" @click="submitFormKyc()">
             提交
           </el-button>

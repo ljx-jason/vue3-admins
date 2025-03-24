@@ -201,9 +201,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .tag-wrap {
-  margin-bottom: 20px;
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 
   .tag-title {
     margin-right: 10px;
@@ -220,10 +220,10 @@ onMounted(() => {
   margin-left: 40px;
 
   .time {
-    font-weight: 400;
-    font-size: 12px;
-    color: #999999;
     margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
     text-align: right;
   }
 }

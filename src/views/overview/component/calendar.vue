@@ -337,29 +337,29 @@ const handleCurrentChange = (val: number) => {
 .custom-dialog-overlay {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 0;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .custom-dialog {
-  background-color: white;
   // border-radius: 8px;
   width: 100%;
   height: 100%;
+  background-color: white;
   // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .custom-dialog-header {
-  padding: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px;
   border-bottom: 1px solid #eee;
 
   .head-tit {
@@ -369,26 +369,26 @@ const handleCurrentChange = (val: number) => {
 }
 
 .close-btn {
-  background: none;
-  border: none;
   font-size: 18px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 /* 自定义头部样式 */
 .defined-header {
   position: relative;
-  width: 100%;
   // height: 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 10px 0;
 
   .current-month {
+    margin: 0 15px;
     font-size: 18px;
     font-weight: bold;
-    margin: 0 15px;
   }
 
   .el-button {
@@ -432,20 +432,20 @@ const handleCurrentChange = (val: number) => {
 
   .tab {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     // width: 11.57rem;
     height: 2.57rem;
-    background-color: #fff;
-    border-radius: 6px;
     font-size: 16px;
-    border: 0.5px solid #e6e6e6;
     cursor: pointer;
+    background-color: #fff;
+    border: 0.5px solid #e6e6e6;
+    border-radius: 6px;
   }
 
   .active {
-    background: #3e81f2;
     color: #fff;
+    background: #3e81f2;
     border: none;
   }
 }
@@ -460,16 +460,16 @@ const handleCurrentChange = (val: number) => {
   height: 100%;
 
   .betweenCenter {
-    width: 100%;
-    height: calc(2.65rem - 4px);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 100%;
+    height: calc(2.65rem - 4px);
     padding: 2px 0 2px 5px;
+    font-size: 12px;
+    color: #333;
     background: #f5f8fc;
     box-shadow: 0rem 0rem 0rem 0rem #3e81f2;
-    color: #333;
-    font-size: 12px;
   }
 }
 
@@ -487,8 +487,8 @@ const handleCurrentChange = (val: number) => {
 
 .cru {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 1.71rem;
   height: 1.71rem;
   color: #fff;
@@ -498,8 +498,8 @@ const handleCurrentChange = (val: number) => {
 
 .pg {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
 }
 
 :deep(.el-calendar__body) {
@@ -520,8 +520,8 @@ const handleCurrentChange = (val: number) => {
 }
 
 :deep(.el-calendar-table td) {
-  border-bottom: 0.0625rem solid #f7f7f7;
   border-right: 0.0625rem solid #f7f7f7;
+  border-bottom: 0.0625rem solid #f7f7f7;
 }
 
 :deep(.el-calendar-table .el-calendar-day) {

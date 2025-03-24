@@ -35,36 +35,36 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .des-list {
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 20px;
 
   &-item {
-    width: calc(100% / 3 - 20px);
     display: flex;
+    width: calc(100% / 3 - 20px);
     margin-bottom: 20px;
 
     .des-list-title {
-      font-weight: 400;
       font-size: 14px;
+      font-weight: 400;
       color: #666666;
 
       // overflow: hidden;
       // text-overflow: ellipsis;
       // white-space: nowrap;
       &::before {
-        content: "●";
         margin-right: 5px;
 
         font-size: 14px;
         color: #cccccc;
+        content: "●";
       }
     }
 
     .des-list-value {
-      font-weight: bold;
       font-size: 14px;
+      font-weight: bold;
       color: #333333;
       // margin-left: 5px;
     }

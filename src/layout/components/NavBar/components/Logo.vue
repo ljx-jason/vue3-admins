@@ -16,8 +16,8 @@ import defaultSettings from "@/settings";
 <style lang="scss" scoped>
 .logo {
   display: flex;
-  justify-self: flex-start;
   align-items: center;
+  justify-self: flex-start;
   width: calc($sidebar-width - 25px);
 
   .title {

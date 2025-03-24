@@ -252,9 +252,9 @@ function checkCapslock(event: KeyboardEvent) {
     bottom: 0;
     width: 100%;
     padding: 10px 0;
-    text-align: center;
     font-size: 12px;
     color: #a8abb2;
+    text-align: center;
   }
 }
 

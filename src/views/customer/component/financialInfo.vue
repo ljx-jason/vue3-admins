@@ -422,15 +422,15 @@ onMounted(() => {
         background-color: #f8f8f8;
 
         .num {
-          font-weight: bold;
           font-size: 22px;
+          font-weight: bold;
           color: #333333;
         }
 
         .title {
           margin-bottom: 3px;
-          font-weight: 400;
           font-size: 14px;
+          font-weight: 400;
           color: #666666;
         }
       }

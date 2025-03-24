@@ -568,8 +568,8 @@ const getTimeLine = (time: any) => {
 .ava {
   position: relative;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   width: 100%;
   padding: 10px 0;
   margin-bottom: 10px;
@@ -578,9 +578,9 @@ const getTimeLine = (time: any) => {
   // border-radius: 6px;
 
   .avatar {
+    z-index: 10;
     width: calc(80px);
     height: calc(78px);
-    z-index: 10;
 
     >img {
       width: 100%;
@@ -601,10 +601,10 @@ const getTimeLine = (time: any) => {
   }
 
   .name {
-    margin-left: 20px;
     margin-right: 40px;
-    color: #333;
+    margin-left: 20px;
     font-weight: bolder;
+    color: #333;
     text-align: left;
 
     .head {
@@ -620,16 +620,16 @@ const getTimeLine = (time: any) => {
     .level {
       margin-top: 15px;
 
+      font-size: 14px;
+      font-weight: normal;
+      color: #666;
+
       img {
         position: relative;
         //   width: calc(32px / 2);
         //   height: calc(28px / 2);
         top: 3px;
       }
-
-      font-size: 14px;
-      color: #666;
-      font-weight: normal;
 
       .val {
         display: inline-block;
@@ -638,17 +638,17 @@ const getTimeLine = (time: any) => {
       }
 
       :deep(.el-tag) {
+        height: 22px;
+        padding: 2px 8px;
         // display: inline-block;
         // background: #a0daf5;
         margin-right: 8px;
-        height: 22px;
-        padding: 2px 8px;
         font-size: 12px;
-        border-radius: 17px;
-        // margin-left: 8px;
-        border: none;
         // color: #409EFF;
         text-align: center;
+        // margin-left: 8px;
+        border: none;
+        border-radius: 17px;
         // transition: transform 0.3s ease, box-shadow 0.3s ease;
         // animation: tagBounce 1s ease forwards;
       }
@@ -660,17 +660,17 @@ const getTimeLine = (time: any) => {
 
     .type {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
+      justify-content: flex-start;
 
       .title {
-        color: #666666;
         font-size: 16px;
+        color: #666666;
       }
 
       .des {
-        font-weight: bolder;
         font-size: 16px;
+        font-weight: bolder;
         color: #333333;
       }
     }
@@ -686,20 +686,20 @@ const getTimeLine = (time: any) => {
 
     &>div {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       width: 110px;
       height: 40px;
-      background-color: #6dadf3;
       color: #fff;
 
-      &:hover {
-        background: #6a9ffa;
-        color: #fff;
-      }
-
       cursor: pointer;
+      background-color: #6dadf3;
       border-radius: 8px;
+
+      &:hover {
+        color: #fff;
+        background: #6a9ffa;
+      }
       // box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.5);
     }
   }
@@ -722,26 +722,26 @@ const getTimeLine = (time: any) => {
 
   /* 可选的间距 */
   &-item {
+    padding: 15px 0;
     // display: flex;
     // justify-content: space-between;
     // align-items: center;
     text-align: center;
-    padding: 15px 0;
     border-radius: 4px;
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
 
     &:hover {
-      transform: scale(1.05);
       /* 放大效果 */
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
       /* 渐进的阴影 */
     }
 
     .pro-list-title {
-      font-weight: 600;
       font-size: 14px;
+      font-weight: 600;
       color: #fff;
     }
 
@@ -778,17 +778,17 @@ const getTimeLine = (time: any) => {
 // }
 .empty {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .count {
   display: flex;
   justify-content: space-between;
-  margin-top: 0px;
-  padding: 10px;
-  background-color: #f0f2f5;
   height: auto;
+  padding: 10px;
+  margin-top: 0px;
+  background-color: #f0f2f5;
 
   .right {
     width: 100%;
@@ -801,11 +801,11 @@ const getTimeLine = (time: any) => {
       border-radius: 6px;
 
       .top-title {
-        font-weight: bold;
-        font-size: 16px;
         margin-bottom: 15px;
-        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
         color: #333333;
+        text-align: left;
       }
 
       .cusinfo {
@@ -841,14 +841,14 @@ const getTimeLine = (time: any) => {
             .title {
               display: inline-block;
               min-width: 60px;
-              text-align: right;
-              color: #666666;
               font-size: 14px;
+              color: #666666;
+              text-align: right;
             }
 
             .des {
-              font-weight: bold;
               font-size: 14px;
+              font-weight: bold;
               color: #333333;
             }
           }
@@ -857,8 +857,8 @@ const getTimeLine = (time: any) => {
 
       .lines {
         height: 1px;
-        background: #ebedf0;
         margin: 10px 0;
+        background: #ebedf0;
       }
     }
 
@@ -873,17 +873,17 @@ const getTimeLine = (time: any) => {
 
       .lin-msg {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         color: #333;
 
         .lin-left {
           text-align: left;
 
           >div:first-child {
+            margin-bottom: 10px;
             font-size: 14px;
             color: #666666;
-            margin-bottom: 10px;
           }
 
           >div:nth-child(2) {
@@ -904,8 +904,8 @@ const getTimeLine = (time: any) => {
             .des-title {
               margin-right: 3px;
               margin-bottom: 10px;
-              font-weight: 400;
               font-size: 14px;
+              font-weight: 400;
               color: #666666;
 
               // &::before {
@@ -924,8 +924,8 @@ const getTimeLine = (time: any) => {
               color: #e83e3e;
 
               &::before {
-                content: "+";
                 margin-right: -3px;
+                content: "+";
               }
             }
 
@@ -934,8 +934,8 @@ const getTimeLine = (time: any) => {
               color: #23c876;
 
               &::before {
-                content: "";
                 margin-right: 0 !important;
+                content: "";
               }
             }
           }
@@ -978,9 +978,9 @@ const getTimeLine = (time: any) => {
 
     .bottom {
       width: 100%;
-      border-radius: 6px;
       padding: 10px 20px;
       background: #fff;
+      border-radius: 6px;
     }
   }
 }
@@ -1017,16 +1017,16 @@ const getTimeLine = (time: any) => {
 
   .el-card__body {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    justify-content: flex-start;
 
     .el-tag--mini {
       min-height: 36px;
       padding: 8px;
-      margin-bottom: 5px;
       margin-right: 10px;
-      background-color: #4484f1;
+      margin-bottom: 5px;
       color: #fff;
+      background-color: #4484f1;
     }
   }
 }
@@ -1047,18 +1047,18 @@ const getTimeLine = (time: any) => {
 
   /* 设置列之间的间隙为20px */
   .tab {
+    padding: 8px 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #828588;
+    cursor: pointer;
     background: #f2f4f7;
     border-radius: 6px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #828588;
-    padding: 8px 0;
-    cursor: pointer;
   }
 
   .active {
-    background: #3e81f2;
     color: #fff;
+    background: #3e81f2;
   }
 }
 
@@ -1068,9 +1068,9 @@ const getTimeLine = (time: any) => {
 
 .view-timeLine {
   height: 100%;
-  text-align: left;
-  padding-left: 20px;
   padding-bottom: 30px;
+  padding-left: 20px;
+  text-align: left;
 
   .timeLine-box {
     // display: flex;
@@ -1096,14 +1096,21 @@ const getTimeLine = (time: any) => {
 }
 
 .custom-tabs-label-text {
-  vertical-align: middle;
   margin-left: 4px;
+  vertical-align: middle;
 }
 </style>
 <style lang="scss">
 .cloudy {
-  -webkit-animation: cloudy 5s ease-in-out infinite;
-  animation: cloudy 5s ease-in-out infinite;
+  // margin-left: 30%;
+  // margin-right: 100px;
+  // margin-top: 35px;
+  // z-index: -999;
+  position: absolute;
+  top: 50%;
+  right: 39%;
+  width: 50px;
+  height: 50px;
   background: #ffffff;
   border-radius: 50%;
   box-shadow:
@@ -1112,16 +1119,9 @@ const getTimeLine = (time: any) => {
     #ffffff 30px 10px,
     #ffffff 60px 15px 0 -10px,
     #ffffff 85px 5px 0 -5px;
-  height: 50px;
-  width: 50px;
-  // margin-left: 30%;
-  // margin-right: 100px;
-  // margin-top: 35px;
-  // z-index: -999;
-  position: absolute;
-  top: 50%;
-  right: 39%;
   transform: translateY(-50%);
+  -webkit-animation: cloudy 5s ease-in-out infinite;
+  animation: cloudy 5s ease-in-out infinite;
 }
 
 @-webkit-keyframes cloudy {
@@ -1140,17 +1140,17 @@ const getTimeLine = (time: any) => {
 
 @-webkit-keyframes cloudy_shadow {
   50% {
+    opacity: 0.05;
     -webkit-transform: translateY(30px) scale(1);
     transform: translateY(30px) scale(1);
-    opacity: 0.05;
   }
 }
 
 @keyframes cloudy_shadow {
   50% {
+    opacity: 0.05;
     -webkit-transform: translateY(30px) scale(1);
     transform: translateY(30px) scale(1);
-    opacity: 0.05;
   }
 }
 

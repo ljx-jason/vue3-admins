@@ -59,25 +59,25 @@ const toggleDrawer = () => {
 
 :deep(.el-drawer.rtl) {
   position: absolute;
-  height: 30%;
-  right: 0;
   top: 15%;
+  right: 0;
+  height: 30%;
   border-radius: 10px;
 }
 
 .arrow-left {
   position: fixed;
-  right: 20px;
   top: 120px;
+  right: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 65px;
   height: 65px;
-  border: 5px solid #fff;
   color: #fff;
-  border-radius: 50%;
-  background-color: #3e81f2;
   cursor: pointer;
+  background-color: #3e81f2;
+  border: 5px solid #fff;
+  border-radius: 50%;
 }
 </style>

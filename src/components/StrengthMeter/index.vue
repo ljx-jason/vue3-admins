@@ -82,11 +82,11 @@ watch(
       display: block;
       width: 33%;
       height: inherit;
+      content: "";
       background-color: transparent;
       border-color: white;
       border-style: solid;
       border-width: 0 5px;
-      content: "";
     }
 
     &::before {

@@ -594,23 +594,23 @@ const showDraw = () => { };
 }
 
 .com-title {
-  font-weight: bold;
-  font-size: 16px;
-  text-align: left;
-  color: rgb(51, 51, 51);
   position: relative;
   padding-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  text-align: left;
 
   &::before {
     position: absolute;
-    content: "";
-    width: 0.1875rem;
-    height: 1rem;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
+    width: 0.1875rem;
+    height: 1rem;
+    content: "";
     background: #333333;
     border-radius: 0.125rem;
+    transform: translateY(-50%);
   }
 }
 
@@ -634,24 +634,24 @@ const showDraw = () => { };
     // height: 36.79rem;
     // height: 50%;
     padding: 15px;
+    overflow: hidden;
     background: #fff;
     border-radius: 6px;
-    overflow: hidden;
   }
 
   .todo-box {
     // flex: calc(0.45 / 2);
     // width:360px;
     width: 28.71rem;
+    padding: 15px;
     // height: 515px;
     background: #ffffff;
-    padding: 15px;
     border-radius: 6px;
 
     .todo-head {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .todo-nav {
@@ -666,15 +666,15 @@ const showDraw = () => { };
       .todo-item {
         position: relative;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         height: 76px;
         padding: 15px;
         margin-top: 15px;
+        cursor: pointer;
         background: #f8f8f8;
         border-radius: 6px;
-        cursor: pointer;
 
         .current {
           position: absolute;
@@ -682,11 +682,11 @@ const showDraw = () => { };
           right: 0;
           width: 60px;
           height: 24px;
+          font-size: 12px;
+          line-height: 24px;
+          color: #707f99;
           background: #e4edfd;
           border-radius: 0px 6px 0px 6px;
-          line-height: 24px;
-          font-size: 12px;
-          color: #707f99;
         }
 
         .todo-img {
@@ -700,11 +700,11 @@ const showDraw = () => { };
         }
 
         .todo-content {
-          flex: 1;
           display: flex;
+          flex: 1;
           flex-direction: column;
-          justify-content: space-between;
           align-items: flex-start;
+          justify-content: space-between;
           height: 100%;
           margin-left: 20px;
 
@@ -714,8 +714,8 @@ const showDraw = () => { };
 
           .todo-value {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
+            justify-content: flex-start;
 
             &>div {
               color: rgba($color: #333, $alpha: 0.7) span {
@@ -730,19 +730,19 @@ const showDraw = () => { };
                 margin-right: 20px;
 
                 &::before {
-                  content: "●";
                   margin-right: 5px;
                   font-size: 18px;
                   color: #cccccc;
+                  content: "●";
                 }
               }
 
               &:last-of-type {
                 &::before {
-                  content: "●";
                   margin-right: 5px;
                   font-size: 18px;
                   color: #3e81f2;
+                  content: "●";
                 }
               }
             }
@@ -756,15 +756,15 @@ const showDraw = () => { };
       // margin-top: 15px;
       .task-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         height: 135px;
         padding: 15px;
         margin-top: 15px;
+        cursor: pointer;
         background: #f8f8f8;
         border-radius: 6px;
-        cursor: pointer;
 
         .task-img {
           position: relative;
@@ -776,9 +776,9 @@ const showDraw = () => { };
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-45%, -35%);
           width: 100%;
           line-height: 1.5;
+          transform: translate(-45%, -35%);
 
           div {
             font-size: 14px;
@@ -786,18 +786,18 @@ const showDraw = () => { };
 
             &:last-child {
               font-size: 1.14rem;
-              color: #333;
               font-weight: bold;
+              color: #333;
             }
           }
         }
 
         .task-content {
-          flex: 1;
           display: flex;
+          flex: 1;
           flex-direction: column;
-          justify-content: space-around;
           align-items: flex-start;
+          justify-content: space-around;
           height: 100%;
           padding: 10px 0;
           margin-left: 20px;
@@ -808,8 +808,8 @@ const showDraw = () => { };
 
           .task-value {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
+            justify-content: flex-start;
 
             &>div {
               color: rgba($color: #333, $alpha: 0.7) span {
@@ -824,20 +824,20 @@ const showDraw = () => { };
                 margin-right: 20px;
 
                 &::before {
-                  content: "●";
                   margin-right: 5px;
                   font-size: 18px;
                   color: #cccccc;
+                  content: "●";
                 }
               }
             }
 
             .alread {
               &::before {
-                content: "●";
                 margin-right: 5px;
                 font-size: 18px;
                 color: #3e81f2;
+                content: "●";
               }
             }
           }
@@ -861,9 +861,9 @@ const showDraw = () => { };
       }
 
       :deep(.el-progress__text) {
-        color: #333;
         font-weight: bold;
         line-height: 1.6;
+        color: #333;
       }
     }
   }
@@ -872,9 +872,9 @@ const showDraw = () => { };
     // flex: calc(0.45 / 2);
     // width: 360px;
     width: 28.71rem;
+    padding: 15px;
     // height: 515px;
     background: #ffffff;
-    padding: 15px;
     border-radius: 6px;
 
     .task-list {
@@ -882,15 +882,15 @@ const showDraw = () => { };
       // margin-top: 15px;
       .task-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         height: 99px;
         padding: 10px 15px;
         margin-top: 15px;
+        cursor: pointer;
         background: #f8f8f8;
         border-radius: 6px;
-        cursor: pointer;
 
         .task-img {
           position: relative;
@@ -903,9 +903,9 @@ const showDraw = () => { };
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-45%, -35%);
           width: 100%;
           line-height: 1.5;
+          transform: translate(-45%, -35%);
 
           div {
             font-size: 14px;
@@ -913,18 +913,18 @@ const showDraw = () => { };
 
             &:last-child {
               font-size: 1.14rem;
-              color: #333;
               font-weight: bold;
+              color: #333;
             }
           }
         }
 
         .task-content {
-          flex: 1;
           display: flex;
+          flex: 1;
           flex-direction: column;
-          justify-content: space-around;
           align-items: flex-start;
+          justify-content: space-around;
           height: 100%;
           // padding: 10px 0;
           margin-left: 20px;
@@ -935,8 +935,8 @@ const showDraw = () => { };
 
           .task-value {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
+            justify-content: flex-start;
 
             &>div {
               color: rgba($color: #333, $alpha: 0.7) span {
@@ -951,20 +951,20 @@ const showDraw = () => { };
                 margin-right: 20px;
 
                 &::before {
-                  content: "●";
                   margin-right: 5px;
                   font-size: 18px;
                   color: #cccccc;
+                  content: "●";
                 }
               }
             }
 
             .alread {
               &::before {
-                content: "●";
                 margin-right: 5px;
                 font-size: 18px;
                 color: #3e81f2;
+                content: "●";
               }
             }
           }
@@ -988,9 +988,9 @@ const showDraw = () => { };
       }
 
       :deep(.el-progress__text) {
-        color: #333;
         font-weight: bold;
         line-height: 1.6;
+        color: #333;
       }
     }
   }
@@ -1014,29 +1014,29 @@ const showDraw = () => { };
     // flex: calc(0.45 / 2);
     width: 28.71rem;
     height: 25.4rem;
+    padding: 15px;
     // height: calc(100% - 520px);
     background: #ffffff;
     border-radius: 0.43rem;
-    padding: 15px;
 
     .myCust-head {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .myCust-nav {
-      border: 1px solid #e6e6e6;
       // color: #E6E6E6;
       cursor: pointer;
+      border: 1px solid #e6e6e6;
     }
 
     .myCust-list {
       .myCust-item {
         width: 100%;
         height: 6.64rem;
-        margin-top: 15px;
         padding: 15px 20px;
+        margin-top: 15px;
         text-align: left;
 
         .myCust-title {
@@ -1044,25 +1044,25 @@ const showDraw = () => { };
         }
 
         .myCust-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
           width: 68%;
           margin-top: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
 
           .myCust-val {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: flex-start;
+            justify-content: space-between;
 
             &>div {
               margin-top: 5px;
             }
 
             .number {
-              font-weight: bold;
               font-size: 1.29rem;
+              font-weight: bold;
               color: #333333;
             }
 
@@ -1081,15 +1081,14 @@ const showDraw = () => { };
               color: #666666;
 
               &::before {
-                content: "●";
                 margin-right: 4px;
-                line-height: 0.86rem;
                 font-size: 12px;
+                line-height: 0.86rem;
                 color: #666666;
+                content: "●";
               }
 
               &-num {
-                color: #24c776;
                 color: #e83e3e;
               }
             }
@@ -1115,14 +1114,14 @@ const showDraw = () => { };
   }
 
   .levelCount {
+    display: flex;
     // flex: 0.55;
     width: calc(65.57rem + 28.71rem);
     height: 25.4rem;
+    padding: 15px;
     // height: calc(100% - 520px);
     background: #ffffff;
     border-radius: 0.43rem;
-    padding: 15px;
-    display: flex;
 
     .pie {
       width: calc(100% / 3);
@@ -1145,8 +1144,8 @@ const showDraw = () => { };
 
     .score-head {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .btn {
@@ -1154,15 +1153,15 @@ const showDraw = () => { };
     }
 
     .score-nav {
-      border: 1px solid #e6e6e6;
       // color: #E6E6E6;
       cursor: pointer;
+      border: 1px solid #e6e6e6;
     }
 
     .score-menu {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       .arrow {
         width: 2rem;
@@ -1176,15 +1175,15 @@ const showDraw = () => { };
       }
 
       .list-content {
-        flex: 1;
-        height: 2.43rem;
-        background: #f8f8f8;
-        border-radius: 0.29rem;
         display: flex;
-        justify-content: space-between;
+        flex: 1;
         align-items: center;
+        justify-content: space-between;
+        height: 2.43rem;
         padding: 15px;
         margin: 10px;
+        background: #f8f8f8;
+        border-radius: 0.29rem;
 
         .tit {
           margin-left: 20px;

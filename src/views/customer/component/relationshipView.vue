@@ -178,8 +178,8 @@ const tabHandleClick = (tab: any) => {
   display: flex;
 
   .part-left {
-    height: 500px;
     width: 60%;
+    height: 500px;
   }
 
   .part-right {

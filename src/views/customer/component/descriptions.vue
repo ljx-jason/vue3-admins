@@ -24,11 +24,11 @@ defineProps<{
 
 <style lang="scss" scoped>
 .container {
-  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   /* 定义4列，每列平均分配剩余空间 */
   grid-gap: 20px;
+  margin-top: 20px;
 
   /* 设置列之间的间隙为20px */
   .tab-item {
@@ -40,23 +40,23 @@ defineProps<{
       box-shadow 0.3s ease;
 
     &:hover {
-      transform: scale(1.05);
       /* 放大效果 */
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
       /* 渐进的阴影 */
     }
 
     .label {
-      font-weight: 400;
       font-size: 14px;
+      font-weight: 400;
       color: #666666;
     }
 
     .value {
-      font-weight: bold;
-      font-size: 14px;
-      color: #333333;
       margin-top: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333333;
     }
   }
 }

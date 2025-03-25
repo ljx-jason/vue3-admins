@@ -68,9 +68,13 @@
 </template>
 
 <script setup lang="ts">
-import UserAPI from "@/api/system/user";
-import DeptAPI from "@/api/system/dept";
-import RoleAPI from "@/api/system/role";
+defineOptions({
+  name: "ratingClaiming",
+  inheritAttrs: false,
+});
+// import UserAPI from "@/api/system/user";
+// import DeptAPI from "@/api/system/dept";
+// import RoleAPI from "@/api/system/role";
 import type { IOperatData, ISearchConfig, IContentConfig } from "@/components/CURD/types";
 import usePage from "@/components/CURD/usePage";
 import { useThrottleFn } from "@vueuse/core";
@@ -217,7 +221,7 @@ const searchConfig: ISearchConfig = {
         },
       },
       async initFn(formItem) {
-        formItem.attrs.data = await DeptAPI.getOptions();
+        // formItem.attrs.data = await DeptAPI.getOptions();
         // 注意:如果initFn函数不是箭头函数,this会指向此配置项对象,那么也就可以用this来替代形参formItem
         // this.attrs!.data = await DeptAPI.getOptions();
       },
@@ -238,7 +242,7 @@ const searchConfig: ISearchConfig = {
         },
       },
       async initFn(formItem) {
-        formItem.attrs.data = await DeptAPI.getOptions();
+        // formItem.attrs.data = await DeptAPI.getOptions();
         // 注意:如果initFn函数不是箭头函数,this会指向此配置项对象,那么也就可以用this来替代形参formItem
         // this.attrs!.data = await DeptAPI.getOptions();
       },
@@ -269,7 +273,25 @@ const contentConfig: IContentConfig = {
     highlightCurrentRow: true,
   },
   indexAction: function (params) {
-    return UserAPI.getPage(params);
+    // return UserAPI.getPage(params);
+    return new Promise((resolve, reject) => {
+      resolve({
+        list: [
+          {
+            id: 1,
+            name: "张三",
+            age: 18,
+            sex: 1,
+            status: 1,
+            createTime: "2020-01-01",
+            updateTime: "2020-01-01",
+          },
+          {
+            id: 2,
+          }
+        ]
+      })
+    })
   },
   pk: "id",
   toolbar: [
@@ -278,14 +300,14 @@ const contentConfig: IContentConfig = {
       icon: "edit",
       text: "分配",
       auth: "add",
-      type: "success",
+      color: "#626aef",
     },
     {
       name: "maintenance",
       icon: "memo",
       text: "维护",
       auth: "add",
-      type: "primary",
+      type: "success",
     },
   ],
   defaultToolbar: ["refresh", "filter", "search"],
@@ -388,6 +410,6 @@ const handleSubmit = useThrottleFn(() => {
   });
 }, 3000);
 onMounted(async () => {
-  options.value = await RoleAPI.getOptions();
+  // options.value = await RoleAPI.getOptions();
 });
 </script>

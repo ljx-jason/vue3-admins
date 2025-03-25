@@ -18,7 +18,7 @@ import defaultSettings from "@/settings";
   display: flex;
   align-items: center;
   justify-self: flex-start;
-  width: calc($sidebar-width - 25px);
+  // width: calc($sidebar-width - 25px);
 
   .title {
     margin-left: 10px;

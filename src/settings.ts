@@ -3,7 +3,7 @@ import { LayoutEnum } from "./enums/LayoutEnum";
 
 const defaultSettings: AppSettings = {
   // 系统Title
-  title: "九州农商银行",
+  title: "客户分层分类管理系统",
   // 是否显示设置
   showSettings: false,
   // 是否显示标签视图

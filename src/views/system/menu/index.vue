@@ -3,12 +3,7 @@
     <div class="search-bar">
       <el-form ref="queryFormRef" :model="queryParams" :inline="true">
         <el-form-item label="关键字" prop="keywords">
-          <el-input
-            v-model="queryParams.keywords"
-            placeholder="菜单名称"
-            clearable
-            @keyup.enter="handleQuery"
-          />
+          <el-input v-model="queryParams.keywords" placeholder="菜单名称" clearable @keyup.enter="handleQuery" />
         </el-form-item>
         <el-form-item>
           <el-button type="primary" icon="search" @click="handleQuery">搜索</el-button>
@@ -19,27 +14,15 @@
 
     <el-card shadow="never">
       <div class="mb-10px">
-        <el-button
-          v-hasPerm="['sys:menu:add']"
-          type="success"
-          icon="plus"
-          @click="handleOpenDialog('0')"
-        >
+        <el-button v-hasPerm="['sys:menu:add']" type="success" icon="plus" @click="handleOpenDialog('0')">
           新增
         </el-button>
       </div>
 
-      <el-table
-        v-loading="loading"
-        :data="menuTableData"
-        highlight-current-row
-        row-key="id"
-        :tree-props="{
-          children: 'children',
-          hasChildren: 'hasChildren',
-        }"
-        @row-click="handleRowClick"
-      >
+      <el-table v-loading="loading" :data="menuTableData" highlight-current-row row-key="id" :tree-props="{
+        children: 'children',
+        hasChildren: 'hasChildren',
+      }" @row-click="handleRowClick">
         <el-table-column label="菜单名称" min-width="200">
           <template #default="scope">
             <template v-if="scope.row.icon && scope.row.icon.startsWith('el-icon')">
@@ -75,36 +58,17 @@
         <el-table-column label="排序" align="center" width="80" prop="sort" />
         <el-table-column fixed="right" align="center" label="操作" width="220">
           <template #default="scope">
-            <el-button
-              v-if="scope.row.type == 'CATALOG' || scope.row.type == 'MENU'"
-              v-hasPerm="['sys:menu:add']"
-              type="primary"
-              link
-              size="small"
-              icon="plus"
-              @click.stop="handleOpenDialog(scope.row.id)"
-            >
+            <el-button v-if="scope.row.type == 'CATALOG' || scope.row.type == 'MENU'" v-hasPerm="['sys:menu:add']"
+              type="primary" link size="small" icon="plus" @click.stop="handleOpenDialog(scope.row.id)">
               新增
             </el-button>
 
-            <el-button
-              v-hasPerm="['sys:menu:edit']"
-              type="primary"
-              link
-              size="small"
-              icon="edit"
-              @click.stop="handleOpenDialog(undefined, scope.row.id)"
-            >
+            <el-button v-hasPerm="['sys:menu:edit']" type="primary" link size="small" icon="edit"
+              @click.stop="handleOpenDialog(undefined, scope.row.id)">
               编辑
             </el-button>
-            <el-button
-              v-hasPerm="['sys:menu:delete']"
-              type="danger"
-              link
-              size="small"
-              icon="delete"
-              @click.stop="handleDelete(scope.row.id)"
-            >
+            <el-button v-hasPerm="['sys:menu:delete']" type="danger" link size="small" icon="delete"
+              @click.stop="handleDelete(scope.row.id)">
               删除
             </el-button>
           </template>
@@ -115,14 +79,8 @@
     <el-drawer v-model="dialog.visible" :title="dialog.title" size="50%" @close="handleCloseDialog">
       <el-form ref="menuFormRef" :model="formData" :rules="rules" label-width="100px">
         <el-form-item label="父级菜单" prop="parentId">
-          <el-tree-select
-            v-model="formData.parentId"
-            placeholder="选择上级菜单"
-            :data="menuOptions"
-            filterable
-            check-strictly
-            :render-after-expand="false"
-          />
+          <el-tree-select v-model="formData.parentId" placeholder="选择上级菜单" :data="menuOptions" filterable check-strictly
+            :render-after-expand="false" />
         </el-form-item>
 
         <el-form-item label="菜单名称" prop="name">
@@ -159,10 +117,8 @@
           <el-input v-model="formData.routeName" placeholder="User" />
         </el-form-item>
 
-        <el-form-item
-          v-if="formData.type == MenuTypeEnum.CATALOG || formData.type == MenuTypeEnum.MENU"
-          prop="routePath"
-        >
+        <el-form-item v-if="formData.type == MenuTypeEnum.CATALOG || formData.type == MenuTypeEnum.MENU"
+          prop="routePath">
           <template #label>
             <div class="flex-y-center">
               路由路径
@@ -177,11 +133,7 @@
               </el-tooltip>
             </div>
           </template>
-          <el-input
-            v-if="formData.type == MenuTypeEnum.CATALOG"
-            v-model="formData.routePath"
-            placeholder="system"
-          />
+          <el-input v-if="formData.type == MenuTypeEnum.CATALOG" v-model="formData.routePath" placeholder="system" />
           <el-input v-else v-model="formData.routePath" placeholder="user" />
         </el-form-item>
 
@@ -235,19 +187,13 @@
 
               <el-input v-model="item.value" placeholder="参数值" style="width: 100px" />
 
-              <el-icon
-                v-if="formData.params.indexOf(item) === formData.params.length - 1"
-                class="ml-2 cursor-pointer color-[var(--el-color-success)]"
-                style="vertical-align: -0.15em"
-                @click="formData.params.push({ key: '', value: '' })"
-              >
+              <el-icon v-if="formData.params.indexOf(item) === formData.params.length - 1"
+                class="ml-2 cursor-pointer color-[var(--el-color-success)]" style="vertical-align: -0.15em"
+                @click="formData.params.push({ key: '', value: '' })">
                 <CirclePlusFilled />
               </el-icon>
-              <el-icon
-                class="ml-2 cursor-pointer color-[var(--el-color-danger)]"
-                style="vertical-align: -0.15em"
-                @click="formData.params.splice(formData.params.indexOf(item), 1)"
-              >
+              <el-icon class="ml-2 cursor-pointer color-[var(--el-color-danger)]" style="vertical-align: -0.15em"
+                @click="formData.params.splice(formData.params.indexOf(item), 1)">
                 <DeleteFilled />
               </el-icon>
             </div>
@@ -261,9 +207,7 @@
           </el-radio-group>
         </el-form-item>
 
-        <el-form-item
-          v-if="formData.type === MenuTypeEnum.CATALOG || formData.type === MenuTypeEnum.MENU"
-        >
+        <el-form-item v-if="formData.type === MenuTypeEnum.CATALOG || formData.type === MenuTypeEnum.MENU">
           <template #label>
             <div class="flex-y-center">
               始终显示
@@ -296,12 +240,7 @@
         </el-form-item>
 
         <el-form-item label="排序" prop="sort">
-          <el-input-number
-            v-model="formData.sort"
-            style="width: 100px"
-            controls-position="right"
-            :min="0"
-          />
+          <el-input-number v-model="formData.sort" style="width: 100px" controls-position="right" :min="0" />
         </el-form-item>
 
         <!-- 权限标识 -->

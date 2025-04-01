@@ -1,11 +1,8 @@
 <template>
   <div class="app-container">
     <div class="flex-x-between mb-10">
-      <el-link
-        href="https://gitee.com/youlaiorg/vue3-element-admin/blob/master/src/views/demo/curd/index.vue"
-        type="primary"
-        target="_blank"
-      >
+      <el-link href="https://gitee.com/youlaiorg/vue3-element-admin/blob/master/src/views/demo/curd/index.vue"
+        type="primary" target="_blank">
         示例源码 请点击>>>>
       </el-link>
       <el-button type="primary" plain round size="small" @click="isA = !isA">切换示例</el-button>
@@ -14,25 +11,13 @@
     <!-- 列表 -->
     <template v-if="isA">
       <!-- 搜索 -->
-      <page-search
-        ref="searchRef"
-        :search-config="searchConfig"
-        @query-click="handleQueryClick"
-        @reset-click="handleResetClick"
-      />
+      <page-search ref="searchRef" :search-config="searchConfig" @query-click="handleQueryClick"
+        @reset-click="handleResetClick" />
 
       <!-- 列表 -->
-      <page-content
-        ref="contentRef"
-        :content-config="contentConfig"
-        @add-click="handleAddClick"
-        @edit-click="handleEditClick"
-        @export-click="handleExportClick"
-        @search-click="handleSearchClick"
-        @toolbar-click="handleToolbarClick"
-        @operat-click="handleOperatClick"
-        @filter-change="handleFilterChange"
-      >
+      <page-content ref="contentRef" :content-config="contentConfig" @add-click="handleAddClick"
+        @edit-click="handleEditClick" @export-click="handleExportClick" @search-click="handleSearchClick"
+        @toolbar-click="handleToolbarClick" @operat-click="handleOperatClick" @filter-change="handleFilterChange">
         <template #status="scope">
           <el-tag :type="scope.row[scope.prop] == 1 ? 'success' : 'info'">
             {{ scope.row[scope.prop] == 1 ? "启用" : "禁用" }}
@@ -43,42 +28,26 @@
         </template>
         <template #mobile="scope">
           <el-text>{{ scope.row[scope.prop] }}</el-text>
-          <copy-button
-            v-if="scope.row[scope.prop]"
-            :text="scope.row[scope.prop]"
-            style="margin-left: 2px"
-          />
+          <copy-button v-if="scope.row[scope.prop]" :text="scope.row[scope.prop]" style="margin-left: 2px" />
         </template>
       </page-content>
 
       <!-- 新增 -->
-      <page-modal
-        ref="addModalRef"
-        :modal-config="addModalConfig"
-        @submit-click="handleSubmitClick"
-      >
+      <page-modal ref="addModalRef" :modal-config="addModalConfig" @submit-click="handleSubmitClick">
         <template #gender="scope">
           <Dict v-model="scope.formData[scope.prop]" code="gender" />
         </template>
       </page-modal>
 
       <!-- 编辑 -->
-      <page-modal
-        ref="editModalRef"
-        :modal-config="editModalConfig"
-        @submit-click="handleSubmitClick"
-      >
+      <page-modal ref="editModalRef" :modal-config="editModalConfig" @submit-click="handleSubmitClick">
         <template #gender="scope">
           <Dict v-model="scope.formData[scope.prop]" code="gender" v-bind="scope.attrs" />
         </template>
       </page-modal>
     </template>
     <template v-else>
-      <page-content
-        ref="contentRef"
-        :content-config="contentConfig2"
-        @operat-click="handleOperatClick"
-      >
+      <page-content ref="contentRef" :content-config="contentConfig2" @operat-click="handleOperatClick">
         <template #status="scope">
           <el-tag :type="scope.row[scope.prop] == 1 ? 'success' : 'info'">
             {{ scope.row[scope.prop] == 1 ? "启用" : "禁用" }}

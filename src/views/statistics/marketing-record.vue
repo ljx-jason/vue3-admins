@@ -69,10 +69,10 @@
 
 <script setup lang="ts">
 defineOptions({
-  name: "ratingClaiming",
+  name: "MarketingRecord",
   inheritAttrs: false,
 });
-import UserAPI from "@/api/system/user";
+// import UserAPI from "@/api/system/user";
 // import DeptAPI from "@/api/system/dept";
 // import RoleAPI from "@/api/system/role";
 import type { IOperatData, ISearchConfig, IContentConfig } from "@/components/CURD/types";
@@ -131,7 +131,6 @@ const formRules = computed(() => {
 
 // 搜索配置
 const searchConfig: ISearchConfig = {
-  isExpandable: false,
   pageName: "rating-claiming",
   formItems: [
     {
@@ -274,27 +273,28 @@ const contentConfig: IContentConfig = {
     highlightCurrentRow: true,
   },
   indexAction: function (params) {
-    return UserAPI.getPage(params);
-
+    // return UserAPI.getPage(params);
+    return new Promise((resolve, reject) => {
+      resolve({
+        list: [
+          {
+            id: 1,
+            name: "张三",
+            age: 18,
+            sex: 1,
+            status: 1,
+            createTime: "2020-01-01",
+            updateTime: "2020-01-01",
+          },
+          {
+            id: 2,
+          }
+        ]
+      })
+    })
   },
   pk: "id",
-  autoHeight: 91,
-  toolbar: [
-    {
-      name: "allocation",
-      icon: "edit",
-      text: "分配",
-      auth: "add",
-      color: "#626aef",
-    },
-    {
-      name: "maintenance",
-      icon: "memo",
-      text: "维护",
-      auth: "add",
-      type: "success",
-    },
-  ],
+  toolbar: [],
   defaultToolbar: ["refresh", "filter", "search"],
   cols: [
     { type: "selection", width: 50, align: "center" },
@@ -325,22 +325,10 @@ const contentConfig: IContentConfig = {
       templet: "tool",
       operat: [
         {
-          icon: "edit",
-          auth: "allocation",
-          name: "allocation",
-          text: "分配",
-        },
-        {
-          icon: "memo",
-          auth: "maintenance",
-          name: "maintenance",
-          text: "维护",
-        },
-        {
           name: "claim",
           auth: "claim",
-          icon: "position",
-          text: "认领",
+          icon: "Memo",
+          text: "营销记录",
         },
         {
           icon: "Document",

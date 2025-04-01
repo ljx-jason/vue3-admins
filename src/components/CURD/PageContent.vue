@@ -95,8 +95,8 @@
       </div>
     </div>
     <!-- 列表 -->
-    <el-table ref="tableRef" v-loading="loading" v-bind="contentConfig.table" :data="pageData" :row-key="pk"
-      @selection-change="handleSelectionChange" @filter-change="handleFilterChange">
+    <el-table ref="tableRef" v-autoHeight="autoHeight" v-loading="loading" v-bind="contentConfig.table" :data="pageData"
+      :row-key="pk" @selection-change="handleSelectionChange" @filter-change="handleFilterChange">
       <template v-for="col in cols" :key="col">
         <el-table-column v-if="col.show" v-bind="col">
           <template #default="scope">
@@ -231,7 +231,7 @@
     <!-- 分页 -->
     <template v-if="showPagination">
       <el-scrollbar>
-        <div class="mt-[12px] page">
+        <div class="mt-[12px] pagination">
           <el-pagination v-bind="pagination" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
         </div>
       </el-scrollbar>
@@ -352,6 +352,8 @@ const emit = defineEmits<{
 
 // 主键
 const pk = props.contentConfig.pk ?? "id";
+// 表格高度
+const autoHeight = ref(props.contentConfig.autoHeight ?? 0)
 // 表格左侧工具栏
 const toolbar = props.contentConfig.toolbar ?? ["add", "delete"];
 // 表格右侧工具栏
@@ -835,15 +837,18 @@ function saveXlsx(fileData: any, fileName: string) {
   window.URL.revokeObjectURL(downloadUrl);
 }
 
+const changeHeight = (val: boolean) => {
+  if (val) {
+    console.log(111);
+    autoHeight.value = props.contentConfig.autoHeight ?? 0
+  } else {
+    console.log(222);
+    autoHeight.value = 0
+  }
+}
+
 // 暴露的属性和方法
-defineExpose({ fetchPageData, exportPageData, getFilterParams });
+defineExpose({ fetchPageData, exportPageData, getFilterParams, changeHeight });
 </script>
 
-<style lang="scss" scoped>
-.page {
-  display: flex;
-  justify-content: flex-end;
-  padding: 12px;
-  margin-top: 10px;
-}
-</style>
+<style lang="scss" scoped></style>

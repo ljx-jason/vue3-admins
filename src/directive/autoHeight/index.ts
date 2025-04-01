@@ -16,6 +16,9 @@ export default {
       resizeObserver.unobserve(document.body);
     });
   },
+  updated(el: HTMLElement, binding: DirectiveBinding) { 
+    setHeight(el, binding);
+  }
 };
 
 function setHeight(el: HTMLElement, binding: DirectiveBinding) {

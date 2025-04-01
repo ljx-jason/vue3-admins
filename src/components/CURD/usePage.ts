@@ -42,6 +42,7 @@ function usePage() {
   // 搜索显隐
   function handleSearchClick() {
     searchRef.value?.toggleVisible();
+    contentRef.value?.changeHeight(searchRef.value!.visible)
   }
   // 涮选数据
   function handleFilterChange(filterParams: IObject) {

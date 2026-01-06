@@ -15,11 +15,6 @@
     "lint:lint-staged": "lint-staged",
     "preinstall": "npx only-allow pnpm"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
   "lint-staged": {
     "*.{js,ts}": [
       "eslint --fix",
@@ -66,8 +61,6 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
     "@eslint/js": "^9.21.0",
     "@iconify/utils": "^2.3.0",
     "@types/codemirror": "^5.60.15",
@@ -81,14 +74,11 @@
     "@typescript-eslint/parser": "^8.24.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "commitizen": "^4.3.1",
-    "cz-git": "^1.11.0",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.15.0",
-    "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.3",
     "postcss-html": "^1.8.0",

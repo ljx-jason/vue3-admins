@@ -1,6 +1,6 @@
 <div align="center">
   <img alt="logo" width="80" height="80" src="./src/assets/logo.png">
-  <h1>数字营销平台</h1>
+  <div style="font-size: 20px; font-weight: bold">数字营销平台</div>
 </div>
 
 ## 环境准备

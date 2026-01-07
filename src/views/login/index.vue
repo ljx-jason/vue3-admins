@@ -81,7 +81,7 @@ const loginFormData = ref<LoginFormData>({
   username: "admin",
   password: "123456",
   captchaKey: "",
-  captchaCode: "",
+  captchaCode: ""
 });
 
 const loginRules = computed(() => {

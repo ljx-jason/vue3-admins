@@ -1,3 +1,7 @@
+<div align="center">
+  <img alt="logo" width="120" height="120" src="./src/common/assets/images/layouts/logo.png">
+  <h1>数字营销平台</h1>
+</div>
 
 ## 环境准备
 

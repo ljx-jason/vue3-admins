@@ -3,7 +3,7 @@ import { LayoutEnum } from "./enums/LayoutEnum";
 
 const defaultSettings: AppSettings = {
   // 系统Title
-  title: "客户分层分类管理系统",
+  title: "数字营销平台",
   // 是否显示设置
   showSettings: false,
   // 是否显示标签视图
@@ -19,7 +19,7 @@ const defaultSettings: AppSettings = {
   // 是否开启水印
   watermarkEnabled: false,
   // 水印内容
-  watermarkContent: "九州农商银行",
+  watermarkContent: "数字营销平台",
   // 侧边栏配色方案
   sidebarColorScheme: "classic-blue",
 };
